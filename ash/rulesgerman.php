@@ -88,7 +88,7 @@
     array("ae","","","Y"), 
     array("oe","","","Y"), 
     array("ü","","","Q"),
-    array("ä","","","Y"),
+    array("ä","","","(Y|e)"),
     array("ö","","","Y"),
     array("ei","","","aj"),
     array("ey","","","aj"),

@@ -295,7 +295,7 @@
 // LANGUAGE SPECIFIC CHARACTERS 
     array("ą","","[bp]","om"), // polish
     array("ą","","","on"),  // polish
-    array("ä","","","Y"), 
+    array("ä","","","(Y|e)"), 
     array("á","","","a"), // Port & Sp
     array("à","","","a"), 
     array("â","","","a"), 

@@ -282,7 +282,7 @@
     
     array("ą","","[bp]","om"),  // polish
     array("ą","","","on"),  // polish
-    array("ä","","","Y"),  // german
+    array("ä","","","(Y|e)"),  // german
     array("á","","","a"), // hungarian
     array("ă","","","(e[$romanian]|a)"), //romanian
     array("à","","","a"),  // french

@@ -111,8 +111,9 @@ $hebrewCommon = array(
     // array("z","","","(z|Z)"),
     // array("d","","","(d|dZ)"),
        
-    array("TB","","$","(t|s)"), // tav from ruleshebrew; only Ashkenazic
-    array("TB","","","t"), // tav from ruleshebrew; only Ashkenazic
+    array("TB","^","","t"), // tav from ruleshebrew; only Ashkenazic
+    array("TB","","$","s"), // tav from ruleshebrew; only Ashkenazic
+    array("TB","","","(t|s)"), // tav from ruleshebrew; only Ashkenazic
     array("T","","","t"),   // tet from ruleshebrew
     
    // array("k","","","(k|x)"),
