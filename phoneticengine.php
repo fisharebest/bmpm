@@ -204,7 +204,36 @@ if ($debug) {
   echo "applying language rules from ($fileName) to <b>$input</b> using languages $languageArg<br><br>";
   echo "char codes =";
   for ($i=0; $i<strlen($input); $i++) {
-    echo " [#". dechex(ord($input[$i]))."]" . $input[$i];
+    if (ord($input[$i]) < 128+64) { // 1-byte character
+      echo " [#" .
+           dechex(ord($input[$i])) .
+           "]" . $input[$i];
+    } else if (ord($input[$i]) < 128+64+32) { // 2-byte character
+      echo " [#" .
+           dechex(ord($input[$i])) . dechex(ord($input[$i+1])) .
+           "]" . substr($input, $i, 2);
+      $i++;
+    } else if (ord($input[$i]) < 128+64+32+16) { // 3-byte character
+      echo " [#" .
+           dechex(ord($input[$i])) . dechex(ord($input[$i+1])) . dechex(ord($input[$i+2])) .
+           "]" . substr($input, $i, 3);
+      $i += 2;
+    } else if (ord($input[$i]) < 128+64+32+16+8) { // 4-byte character
+      echo " [#" .
+           dechex(ord($input[$i])) . dechex(ord($input[$i+1])) . dechex(ord($input[$i+2])) . dechex(ord($input[$i+3])) .
+           "]" . substr($input, $i, 4);
+      $i += 3;
+    } else if (ord($input[$i]) < 128+64+32+16+8) { // 5-byte character
+      echo " [#" .
+           dechex(ord($input[$i])) . dechex(ord($input[$i+1])) . dechex(ord($input[$i+2])) . dechex(ord($input[$i+3])) . dechex(ord($input[$i+4])) .
+           "]" . substr($input, $i, 5);
+      $i += 4;
+    } else if (ord($input[$i]) < 128+64+32+16+8+4) { // 6-byte character
+      echo " [#" .
+           dechex(ord($input[$i])) . dechex(ord($input[$i+1])) . dechex(ord($input[$i+2])) . dechex(ord($input[$i+3])) . dechex(ord($input[$i+4])) . dechex(ord($input[$i+5])) .
+           "]" . substr($input, $i, 5);
+      $i += 5;
+    }
   }
   echo "<br><br>";
 }

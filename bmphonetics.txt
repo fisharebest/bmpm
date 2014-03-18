@@ -137,7 +137,7 @@ For questions, contact either of the following:
 
     include "phoneticutils.php";
     include "phoneticengine.php";
-    include "lang.php";
+    include "gen/lang.php";
     include "gen/approxcommon.php";
     for ($i=0; $i<count($languages); $i++) {
       include "gen/rules" . $languages[$i] . ".php";

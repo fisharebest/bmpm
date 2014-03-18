@@ -65,6 +65,8 @@ $approxAny = array(
     array("lE","[bdfgkmnprsStvzZ]","","(li|il[$english]|lY[$german])"),  // Applebaum < Appelbaum
     array("rE","[bdfgkmnprsStvzZ]","","(ri|ir[$english]|rY[$german])"),  
     
+    array("EE","","","(i|)"), 
+    
     array("ea","","","(D|a|i)"),
     
     array("au","","","(D|a|u)"),

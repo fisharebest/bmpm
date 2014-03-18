@@ -67,7 +67,7 @@ $hebrewCommon = array(
     array("VV","","","u"), // alef/ayin + vov from ruleshebrew
     array("L","^","","1"), // alef/ayin from  ruleshebrew
     array("L","","$","1"), // alef/ayin from  ruleshebrew
-    array("L","",""," "), // alef/ayin from  ruleshebrew
+    array("L","","",""), // alef/ayin from  ruleshebrew
     array("WW","^","","(vi|u)"), // vav-yod from  ruleshebrew
     array("WW","","","u"), // vav-yod from  ruleshebrew
     array("W","^","","(u|v)"), // vav from  ruleshebrew

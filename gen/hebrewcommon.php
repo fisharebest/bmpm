@@ -31,7 +31,10 @@ $hebrewCommon = array(
     array("p","","","f"),   
     array("b","^","","b"),    
     array("b","","","(b|v)"),    
-        
+    array("B","","","(b|v)"),    // Spanish "b"
+    array("V","","","v"),    // Spanish "v"
+    array("EE","","","(1|)"), // final "e" (english & french)
+       
     array("ja","","","i"),
     array("jA","","","i"),  
     array("je","","","i"),
@@ -72,24 +75,27 @@ $hebrewCommon = array(
     array("ou","^","","(u|v|1)"),
     array("o","^","","(u|v|1)"),
     array("O","^","","(u|v|1)"),
+    array("P","^","","(u|v|1)"),
     array("U","^","","(u|v|1)"),
     array("u","^","","(u|v|1)"),
     
     array("o","","$","(u|1)"),
     array("O","","$","(u|1)"),
+    array("P","","$","(u|1)"),
     array("u","","$","(u|1)"),
     array("U","","$","(u|1)"),
     
     array("ou","","","u"),
     array("o","","","u"),
     array("O","","","u"),
+    array("P","","","u"),
     array("U","","","u"),
         
     array("VV","","","u"), // alef/ayin + vov from ruleshebrew
     array("V","","","v"), // tsvey-vov from ruleshebrew;; only Ashkenazic
     array("L","^","","1"), // alef/ayin from  ruleshebrew
     array("L","","$","1"), // alef/ayin from  ruleshebrew
-    array("L","",""," "), // alef/ayin from  ruleshebrew
+    array("L","","",""), // alef/ayin from  ruleshebrew
     array("WW","^","","(vi|u)"), // vav-yod from  ruleshebrew
     array("WW","","","u"), // vav-yod from  ruleshebrew
     array("W","^","","(u|v)"), // vav from  ruleshebrew
