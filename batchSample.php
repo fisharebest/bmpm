@@ -4,7 +4,7 @@
    *
    * Copyright Alexander Beider and Stephen P. Morse, 2008
    *
-   * This file is part of the Beider-Morse Phonetic Matching (BMPM) System. 
+   * This file is part of the Beider-Morse Phonetic Matching (BMPM) System.
 
    * BMPM is free software: you can redistribute it and/or modify
    * it under the terms of the GNU General Public License as published by
@@ -21,19 +21,17 @@
    *
    */
 
-  set_time_limit(3000); // removes any time limits on execution time
-  ini_set('max_execution_time',3000);
+include "phoneticutils.php";
+include "phoneticengine.php";
+include "dmsoundex.php";
 
   $type = $_GET['type']; // ash, sep, or gen
   if ($type == "") {
     $type = "gen"; // generic
   }
 
-  include "phoneticutils.php";
-  include "phoneticengine.php";
   include "$type/approxcommon.php";
   include "$type/lang.php";
-  include "dmsoundex.php";
 
   for ($i=0; $i<count($languages); $i++) {
     include "$type/rules" . $languages[$i] . ".php";
@@ -46,7 +44,7 @@
   $languageCode = LanguageCode($languageName, $languages);
 
   // open input and output files
-  
+
   if (!file_exists($outputFileName)) {
     if (!($handle = fopen($outputFileName,"x"))) {
       echo "error creating and opening ".$outputFileName;
@@ -60,7 +58,7 @@
   }
 
   // process each line in the input file
-  
+
   $lines = file($inputFileName);
   for ($ln=0; $ln<count($lines); $ln++){
 if (($ln+1)%100 == 0) echo ($ln+1) . " of " . count($lines) . "<br>";
@@ -79,4 +77,4 @@ if (($ln+1)%100 == 0) echo ($ln+1) . " of " . count($lines) . "<br>";
     fputs($handle, "$name\t$numbers2\t$soundex\n");
   }
   echo "Done<br>";
-?> 
+?>

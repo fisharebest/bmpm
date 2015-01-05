@@ -1,10 +1,10 @@
 <?php
-  
+
   /*
    *
    * Copyright Alexander Beider and Stephen P. Morse, 2008
    *
-   * This file is part of the Beider-Morse Phonetic Matching (BMPM) System. 
+   * This file is part of the Beider-Morse Phonetic Matching (BMPM) System.
 
    * BMPM is free software: you can redistribute it and/or modify
    * it under the terms of the GNU General Public License as published by
@@ -21,36 +21,63 @@
    *
    */
 
-  $type = $_GET['type']; // ash, sep, or gen
-  if ($type == "") {
-    $type = "gen"; // generic
+  switch (filter_input(INPUT_GET, 'type')) {
+    case 'ash':
+      $languages = array(
+        'any', 'cyrillic', 'english', 'french', 'german', 'hebrew', 'hungarian', 'polish',
+        'romanian', 'russian', 'spanish'
+      );
+      $any       = 1;
+      $cyrillic  = 2;
+      $english   = 4;
+      $french    = 8;
+      $german    = 16;
+      $hebrew    = 32;
+      $hungarian = 64;
+      $polish    = 128;
+      $romanian  = 256;
+      $russian   = 512;
+      $spanish   = 1024;
+      break;
+    case 'sep':
+      $languages = array(
+        'any', 'french', 'hebrew', 'italian', 'portuguese', 'spanish'
+      );
+      $any        = 1;
+      $french     = 2;
+      $hebrew     = 4;
+      $italian    = 8;
+      $portuguese = 16;
+      $spanish    = 32;
+      break;
+    default:
+    case 'gen':
+       $languages = array(
+        'any', 'arabic', 'cyrillic', 'czech', 'dutch', 'english', 'french', 'german', 'greek',
+        'greeklatin', 'hebrew', 'hungarian', 'italian', 'polish', 'portuguese','romanian',
+        'russian', 'spanish', 'turkish'
+       );
+      $any = 1;
+      $arabic = 2;
+      $cyrillic = 4;
+      $czech = 8;
+      $dutch = 16;
+      $english = 32;
+      $french = 64;
+      $german = 128;
+      $greek = 256;
+      $greeklatin = 512;
+      $hebrew = 1024;
+      $hungarian = 2048;
+      $italian = 4096;
+      $polish = 8192;
+      $portuguese = 16384;
+      $romanian = 32768;
+      $russian = 65536;
+      $spanish = 131072;
+      $turkish = 262144;
+      break;
   }
-  include ("$type/languagenames.php");
-/*
-  $languages = array
-    ("any", "cyrillic", "english", "french", "german", "germandjsg", "hebrew",
-     "hungarian", "polish", "polishdjskp", "romanian", "russian", "russiandjsre", "spanish");
-*/
-  for ($i=0; $i<count($languages); $i++) {
-    $language = $languages[$i];
-    $command = "$" . "$language = LanguageCode('$language', " . "$" . "languages);";
-    eval ($command);
-    // generate things like
-    //  $cyrillic = LanguageCode('cyrillic', $languages);
-  }
-
-/*
-  $cyrillic = LanguageCode("cyrillic", $languages);
-  $english = LanguageCode("english", $languages);
-  $french = LanguageCode("french", $languages);
-  $german = LanguageCode("german", $languages);
-  $hebrew = LanguageCode("hebrew", $languages);
-  $hungarian = LanguageCode("hungarian", $languages);
-  $polish = LanguageCode("polish", $languages);
-  $romanian = LanguageCode("romanian", $languages);
-  $russian = LanguageCode("russian", $languages);
-  $spanish = LanguageCode("spanish", $languages);
-*/
 
   $rules = array();
   $approx = array();

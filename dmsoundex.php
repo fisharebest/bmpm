@@ -4,7 +4,7 @@
    *
    * Copyright Stephen P. Morse, 2005
    *
-   * This file is part of the Beider-Morse Phonetic Matching (BMPM) System. 
+   * This file is part of the Beider-Morse Phonetic Matching (BMPM) System.
 
    * BMPM is free software: you can redistribute it and/or modify
    * it under the terms of the GNU General Public License as published by
@@ -66,7 +66,6 @@
 
     include "dmlat.php";
     $SEPARATOR = " ";
-    $DMDEBUG = FALSE;
     $MyStr = strtolower($MyStrArg);
     $MyStr3 = $MyStr;
 
@@ -97,7 +96,6 @@
           }
         }
       }
-  if($DMDEBUG) printf ("pt1 MyStr='%s', MyStr2='%s', MyStr3='%s'\n", $MyStr, $MyStr2, $MyStr3);
       if ($i == $LenMyStr3) {
         $MyStr3 = ""; // finished
       }
@@ -111,7 +109,6 @@
         }
       }
       if (!$allblank) {
-  if($DMDEBUG) printf ("pt2 MyStr='%s', MyStr2='%s', MyStr3='%s'\n", $MyStr, $MyStr2, $MyStr3);
         $dim_dm2 = 1;
         $dm2 = array();
         $dm2[0] = "";
@@ -136,7 +133,7 @@
               } else {
                 $xr = -1;
               }
-   
+
               $dm = $dm . "_" . $newrules[$rule][0];
               if (strlen($MyStr) > strlen($newrules[$rule][0])) {
                 $MyStr = substr($MyStr, strlen($newrules[$rule][0]));
@@ -162,7 +159,6 @@
                 }
                 // if 1st position is a vowel
                 if (strlen($MyStr) > 0 && strpos($vowels, $MyStr[0]) !== false) {
-  if($DMDEBUG) printf ("pt2b vowel: '%s'\n", $MyStr[0]);
                   for ($ii=0; $ii<$dmnumber; $ii++) {
                     if ($newrules[$rule][2] != "999" && $newrules[$rule][2] != $lastdm[$ii]) {
                       $lastdm[$ii] = $newrules[$rule][2];
@@ -189,13 +185,10 @@
                       }
                     }
                   }
-  if($DMDEBUG) printf ("pt2c vowel: '%s'  done\n", $MyStr[0]);
-      
+
                 // 1st position not a vowel
                 } else {
                   for ($ii=0; $ii<$dmnumber; $ii++) {
-  if($DMDEBUG) echo "pt2d lastdm:\n"; 
-  if($DMDEBUG) print_r($lastdm);
                     if ($newrules[$rule][3] != "999" && $newrules[$rule][3] != $lastdm[$ii]) {
                       $lastdm[$ii] = $newrules[$rule][3];
                       $dm2[$ii] .= $newrules[$rule][3];
@@ -206,7 +199,6 @@
                   }
                   if ($dim_dm2 > 1) {
                     for ($ii=$dmnumber; $ii<$dim_dm2; $ii++) {
-  if($DMDEBUG) echo "pt2e checking xrules\n";
                       if ($xr >= 0 && $xnewrules[$xr][3] != "999" && $xnewrules[$xr][3] != $lastdm[$ii]) {
                         $lastdm[$ii] = $xnewrules[$xr][3];
                         $dm2[$ii] .= $xnewrules[$xr][3];
@@ -227,12 +219,9 @@
               break; // stop looping through rules
             } // end of match found
 
-  if($DMDEBUG) echo "end of pt2a\n";
           } // end of looping through the rules
         } // end of while (strlen($MyStr)) > 0)
 
-  if($DMDEBUG) echo "pt4 dm2:"; 
-  if($DMDEBUG) print_r($dm2);
         $dm = "";
         for ($ii=0; $ii<$dim_dm2; $ii++) {
           $dm2[$ii] = substr($dm2[$ii] . "000000",0, 6);
@@ -250,7 +239,6 @@
           }
         }
 
-  if($DMDEBUG) echo "pt3 - dm3 '" . $dm3 . "' dm '" . $dm . "'\n";
         if (strlen($dm3) > 0 && strlen($dm) > 0 && strpos($dm3, $dm) === false) {
           $dm3 = $dm3 . $SEPARATOR . $dm;
         } else {
