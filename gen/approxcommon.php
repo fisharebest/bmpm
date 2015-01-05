@@ -44,19 +44,19 @@ $approxCommon = array(
     array ("sEn", "[rmnl]", "$", "(zn|zon)"),
     array ("sEn", "", "$", "(sn|son)"),
             
-    array ("e", "[bdfgklmnprsStvzZ]", "[ln]$", ""),
-    array ("i", "[bdfgklmnprsStvzZ]", "[ln]$", ""),
-    array ("E", "[bdfgklmnprsStvzZ]", "[ln]$", ""),
-    array ("I", "[bdfgklmnprsStvzZ]", "[ln]$", ""),
-    array ("Q", "[bdfgklmnprsStvzZ]", "[ln]$", ""),
-    array ("Y", "[bdfgklmnprsStvzZ]", "[ln]$", ""),
+    array ("e", "[BbdfgklmnprsStvzZ]", "[ln]$", ""),
+    array ("i", "[BbdfgklmnprsStvzZ]", "[ln]$", ""),
+    array ("E", "[BbdfgklmnprsStvzZ]", "[ln]$", ""),
+    array ("I", "[BbdfgklmnprsStvzZ]", "[ln]$", ""),
+    array ("Q", "[BbdfgklmnprsStvzZ]", "[ln]$", ""),
+    array ("Y", "[BbdfgklmnprsStvzZ]", "[ln]$", ""),
 
-    array ("e", "[bdfgklmnprsStvzZ]", "[ln][bdfgklmnprsStvzZ]", ""),
-    array ("i", "[bdfgklmnprsStvzZ]", "[ln][bdfgklmnprsStvzZ]", ""),
-    array ("E", "[bdfgklmnprsStvzZ]", "[ln][bdfgklmnprsStvzZ]", ""),
-    array ("I", "[bdfgklmnprsStvzZ]", "[ln][bdfgklmnprsStvzZ]", ""),
-    array ("Q", "[bdfgklmnprsStvzZ]", "[ln][bdfgklmnprsStvzZ]", ""),
-    array ("Y", "[bdfgklmnprsStvzZ]", "[ln][bdfgklmnprsStvzZ]", ""),
+    array ("e", "[BbdfgklmnprsStvzZ]", "[ln][BbdfgklmnprsStvzZ]", ""),
+    array ("i", "[BbdfgklmnprsStvzZ]", "[ln][BbdfgklmnprsStvzZ]", ""),
+    array ("E", "[BbdfgklmnprsStvzZ]", "[ln][BbdfgklmnprsStvzZ]", ""),
+    array ("I", "[BbdfgklmnprsStvzZ]", "[ln][BbdfgklmnprsStvzZ]", ""),
+    array ("Q", "[BbdfgklmnprsStvzZ]", "[ln][BbdfgklmnprsStvzZ]", ""),
+    array ("Y", "[BbdfgklmnprsStvzZ]", "[ln][BbdfgklmnprsStvzZ]", ""),
 
     array("lEs","","","(lEs|lz)"),  // Applebaum < Appelbaum (English + blend English-something forms as Finklestein)
     array("lE","[bdfgkmnprStvzZ]","","(lE|l)"),  // Applebaum < Appelbaum (English + blend English-something forms as Finklestein)

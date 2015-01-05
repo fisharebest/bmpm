@@ -36,8 +36,16 @@
     array ("P", "", "", "o"),
     array ("U", "", "", "u"),
     
+    array("B","","[fktSs]","p"),
+    array("B","","p",""),
+    array("B","","$","p"),
+    array("V","","[pktSs]","f"),
+    array("V","","f",""),
+    array("V","","$","f"),
+    
     array ("B", "", "", "b"),
     array ("V", "", "", "v"),
+
         
     array("exactany")
       

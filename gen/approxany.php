@@ -36,6 +36,13 @@ $approxAny = array(
     array("mp","","","(mp|b[$greeklatin])"),
     array("ng","","","(ng|g[$greeklatin])"),
 
+    array("B","","[fktSs]","(p|f[$spanish])"),
+    array("B","","p",""),
+    array("B","","$","(p|f[$spanish])"),
+    array("V","","[pktSs]","(f|p[$spanish])"),
+    array("V","","f",""),
+    array("V","","$","(f|p[$spanish])"),
+    
     array("B","","","(b|v[$spanish])"),
     array("V","","","(v|b[$spanish])"),
     
